@@ -14,12 +14,15 @@ export const usersReducer = (state = [], action) => {
             return state.filter(user => user.id !== action.payload);
         case 'updateUser':
             return state.map(u => {
+                //console.log(u.password)
                 if (u.id === action.payload.id) {
                     return {
                         ...action.payload,
                         password: u.password
                     };
                 }
+                //console.log(state.password);
+                console.log(u.password);
                 return u;
             })
         case 'loadingUsers':
