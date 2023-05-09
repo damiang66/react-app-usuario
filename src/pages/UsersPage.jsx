@@ -12,6 +12,7 @@ export const UsersPage = () => {
         visibleForm,
         handlerOpenForm,
         getUsers,
+        isLoading,
     } = useUsers();
 
     const { login } = useAuth();;
@@ -19,7 +20,15 @@ export const UsersPage = () => {
     useEffect(() => {
         getUsers();
     }, []);
-    
+    if(isLoading){
+        return (
+            <div className="container">
+            <div className="spinner-border text-secondary" role="status">
+            <span className="visually-hidden">Cargando...</span>
+          </div>
+          </div>
+        )
+    }
     return (
         <>
 

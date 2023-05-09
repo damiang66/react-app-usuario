@@ -17,7 +17,7 @@ const initialUsers = [];
 
 export const useUsers = () => {
   
-   const {users,userSelected,visibleForm,errors}= useSelector(state=>state.users)
+   const {users,userSelected,visibleForm,errors,isLoading}= useSelector(state=>state.users)
    const dispatch= useDispatch();
 
 
@@ -149,5 +149,6 @@ export const useUsers = () => {
         handlerOpenForm,
         handlerCloseForm,
         getUsers,
+        isLoading,
     }
 }
